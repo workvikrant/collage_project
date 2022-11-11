@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>Collage project</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Car Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="length" placeholder="length" required="required" />
+        <input type="text" name="width" placeholder="width" required="required" />
+		<input type="text" name="curb-weight" placeholder="curb-weight" required="required" />
+		<input type="text" name="engine-size" placeholder="engine-size" required="required" />
+		<input type="text" name="horsepower" placeholder="horsepower" required="required" />
+		<input type="text" name="city-mpg" placeholder="city-mpg" required="required" />
+		<input type="text" name="highway-mpg" placeholder="highway-mpg" required="required" />
+		<input type="text" name="wheel-base" placeholder="wheel-base" required="required" />
+		<input type="text" name="bore" placeholder="bore" required="required" />
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+</body>
+</html>
